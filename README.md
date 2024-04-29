@@ -8,6 +8,12 @@
 
 ## 💾 Installation
 
+Using pipx (undoubtedly the best way):
+
+```sh
+pipx install wordc
+```
+
 OS X & Linux:
 
 ```sh
@@ -27,6 +33,53 @@ pip install wordc
 ```sh
 pip install --editable wordc
 ```
+
+# 📝 Usage
+
+---
+
+Display the help menu with the `-h` argument
+
+```bash
+~ $ wordc -h
+```
+
+```bash
+usage: wordc [-h] [-e ENCODING] [-c] [-s SIZE] [-t TOP_WORDS] [--version] FILENAME
+
+Utility to list the top word frequency in a document
+
+positional arguments:
+  FILENAME              file to analyze for word frequency
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e ENCODING, --encoding ENCODING
+                        Encoding to use when reading file
+  -c, --chunk           Force file chunking irrespective of file size
+  -s SIZE, --size SIZE  Chunk size to use when reading file
+  -t TOP_WORDS, --top_words TOP_WORDS
+                        Number of top words to list
+  --version             display version number
+```
+
+specify the file
+
+```bash
+~ $ wordc text_file.txt
+4284 the
+2192 and
+2185 of
+1861 a
+1685 to
+```
+
+File chunking will happen automatically in certain situations:
+
+1. When the (file size / availanle memory) ratio is over 25%
+2. When the file size is over 100Mb
+
+File chunking can be forced however by using the `-c` argument.
 
 # <ℹ️> Meta
 

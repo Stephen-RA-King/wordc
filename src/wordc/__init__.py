@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """Top-level package for wordc."""
-# Core Library modules
-import logging.config
 
-# Third party modules
-import yaml  # type: ignore
 
 __title__ = "wordc"
 __version__ = "0.1.0"

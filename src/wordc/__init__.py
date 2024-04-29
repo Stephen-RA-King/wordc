@@ -3,7 +3,7 @@
 
 
 __title__ = "wordc"
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 __author__ = "Stephen R A King"
 __description__ = "boilerplate you need to create a Python package."
 __email__ = "sking.github@gmail.com"

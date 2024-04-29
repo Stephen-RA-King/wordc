@@ -14,12 +14,14 @@ from .utils import determine_chunking, is_binary
 
 @file_exception
 def read_file_contents(doc: str, encoding: str) -> str:
+    """Read a file normally - used for relatively small files"""
     with open(doc, encoding=encoding) as file:
         return file.read()
 
 
 @file_exception
 def read_file_chunks(doc: str, encoding: str, chunk_size: int) -> Generator:
+    """Read a file chunked into a specific size - used for large files"""
     with open(doc, encoding=encoding) as file:
         remainder = ""
         while True:
@@ -38,6 +40,7 @@ def read_file_chunks(doc: str, encoding: str, chunk_size: int) -> Generator:
 
 
 def process_contents(content: str) -> Counter:
+    """Process the text to remove punctuation etc"""
     words = "".join(c if c.isalnum() else " " for c in content).split()
     words = [word.lower() for word in words]
     word_counts = Counter(words)

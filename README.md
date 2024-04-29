@@ -1,83 +1,10 @@
 # wordc
 
-> Short blurb about what your product does.
-
-[![PyPI][pypi-image]][pypi-url]
-[![Downloads][downloads-image]][downloads-url]
-[![Status][status-image]][pypi-url]
-[![Python Version][python-version-image]][pypi-url]
-[![tests][tests-image]][tests-url]
-[![Codecov][codecov-image]][codecov-url]
-[![CodeQl][codeql-image]][codeql-url]
-[![Docker][docker-image]][docker-url]
-[![pre-commit][pre-commit-image]][pre-commit-url]
-[![pre-commit.ci status][pre-commit.ci-image]][pre-commit.ci-url]
-[![readthedocs][readthedocs-image]][readthedocs-url]
-[![CodeFactor][codefactor-image]][codefactor-url]
-[![Codeclimate][codeclimate-image]][codeclimate-url]
-[![Imports: isort][isort-image]][isort-url]
-[![Code style: black][black-image]][black-url]
-[![Checked with mypy][mypy-image]][mypy-url]
-[![security: bandit][bandit-image]][bandit-url]
-[![Commitizen friendly][commitizen-image]][commitizen-url]
-[![Conventional Commits][conventional-commits-image]][conventional-commits-url]
-[![Versioning][versioning-image]][versioning-url]
-[![DeepSource][deepsource-image]][deepsource-url]
-[![license][license-image]][license-url]
-[![Pydough][pydough-image]][pydough-url]
-[![OpenSSFScorecard][openssf-image]][openssf-url]
-
-One to two paragraph statement about your product and what it does.
-
-![](assets/header_dough1.png)
-
-# Contents
-
--   [Demo](#-demo)
--   [Project rationale](#-project-rationale)
--   [Quick start](#-quickstart)
-    -   [Prerequisites](#-prerequisites)
-    -   [Installation](#-installation)
-    -   [Basic Usage](#-basic-usage)
--   [Usage](#-usage)
--   [Development setup](#-development-setup)
--   [Configuration](#-configuration)
--   [Documentation](#-documentation)
-    -   [Read the Docs](https://pynamer.readthedocs.io/en/latest/)
-    -   [API](https://pynamer.readthedocs.io/en/latest/autoapi/pynamer/pynamer/index.html)
-    -   [Wiki](https://github.com/Stephen-RA-King/pynamer/wiki)
--   [FAQs](#-faqs)
--   [What's new in version x.x](#-whats-new-in-version-xx)
--   [Planned future enhancements](#-planned-future-enhancements)
--   [Package statistics](#-package-statistics)
--   [License](#-license)
--   [Meta information](#ℹ-meta)
-
-# 📺 Demo
-
----
-
-Put a demo animated gif here.
-
-# 💡 Project rationale
-
----
-
-Why I built this project
-
-## 👓 TLDR
-
-A very succinct paragraph summary regarding the package purpose and operation.
+> Small utility to analyze the word frequency in a text file
 
 # 🚀 Quickstart
 
 ---
-
-Explain succinctly how to use the repository
-
-## 📋 Prerequisites
-
--   A bulleted list of requirements
 
 ## 💾 Installation
 
@@ -93,150 +20,13 @@ Windows:
 pip install wordc
 ```
 
-## 📝 Basic Usage
-
-A simple example demonstrating that the package is working
-
-# 📝 Usage
-
----
-
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
-
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
 # 🔧 Development setup
 
 ---
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
 ```sh
 pip install --editable wordc
 ```
-
-# ⚙️ Configuration
-
----
-
-Place configuration information here
-
-# 🔒 Security Considerations
-
----
-
-Write any security concerns that you may have here.
-e.g. exposure of API keys, passwords, old modules etc.
-
-# 📚 Documentation
-
----
-
-[**Read the Docs**](https://wordc.readthedocs.io/en/latest/)
-
--   [**Example Usage**](https://wordc.readthedocs.io/en/latest/example.html)
--   [**Credits**](https://wordc.readthedocs.io/en/latest/example.html)
--   [**Changelog**](https://wordc.readthedocs.io/en/latest/changelog.html)
--   [**API Reference**](https://wordc.readthedocs.io/en/latest/autoapi/index.html)
-
-[**Wiki**](https://github.com/Stephen-RA-King/wordc/wiki)
-
-# 🧬 Design Considerations
-
----
-
-A few paragraphs on the design considerations if required.
-
-# 🐳 Using Docker
-
----
-
-## Building the Image from Dockerfile
-
-Start your docker runtime then:
-
-Build the image using **_docker build_** command. e.g.
-
-```shell
-$ docker build -t sraking/wordc:0.1.0 -t sraking/wordc:latest .
-```
-
-Once built, run the image using the **_docker run_** command. This will create the container. e.g.
-
-```shell
-$ docker run -it sraking/wordc:0.1.0 /bin/bash
-```
-
-Optional: The image can now be pushed to the repository using the **_docker push_** command. e.g.
-
-```shell
-$ docker push sraking/wordc:0.1.0
-```
-
-## Using the ready built image on dockerhub
-
-Pull the latest image from the repository using the **_docker pull_** command. e.g.
-
-```bash
-~ $ docker pull sraking/wordc
-```
-
-Now run the image using the **_docker run_** command. This will create the container. e.g.
-
-```bash
-~ $ docker run -it sraking/wordc /bin/bash
-```
-
-Use the command line as normal in the container.
-
-```bash
-root@4d315992ca28:/app# wordc -h
-```
-
-# ⚠️ Limitations
-
----
-
-Describe any limitation the application may have (if any).
-
-# ⁉️ Some Quirks
-
----
-
-The reason I wrote this application in the first place.
-
-## ❓ FAQs
-
----
-
-Give examples of frequently asked questions
-
-# 📰 What's new in version x.x
-
----
-
--   bulleted list of new features
-
-# 📆 Planned future enhancements
-
----
-
--   Feature 1
--   Feature 2
-
-# 📊 Package statistics
-
----
-
--   [**libraries.io**](https://libraries.io/pypi/Stephen-RA-King)
--   [**PyPI Stats**](https://pypistats.org/packages/Stephen-RA-King)
--   [**Pepy**](https://www.pepy.tech/projects/Stephen-RA-King)
-
-# 📜 License
-
----
-
-Distributed under the MIT license. See [![][license-image]][license-url] for more information.
 
 # <ℹ️> Meta
 
@@ -253,8 +43,6 @@ Distributed under the MIT license. See [![][license-image]][license-url] for mor
 Author: Stephen R A King ([sking.github@gmail.com](mailto:sking.github@gmail.com))
 
 Created with Cookiecutter template: [![pydough][pydough-image]][pydough-url] version 1.3.4
-
-Digital object identifier: [![DOI](https://zenodo.org/badge/xxxxxxxxx.svg)](https://zenodo.org/badge/latestdoi/xxxxxxxxx)
 
 <!-- Markdown link & img dfn's -->
 

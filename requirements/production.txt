@@ -4,3 +4,7 @@
 #
 #    pip-compile production.in
 #
+chardet==5.2.0
+    # via -r production.in
+psutil==5.9.8
+    # via -r production.in

@@ -6,12 +6,12 @@ from . import __version__
 from .config import config
 
 
-def _parse_args(args: list) -> tuple[argparse.Namespace, argparse.ArgumentParser]:
-    """Function to return the ArgumentParser object created from the args.
+def parse_args(args: list) -> tuple[argparse.Namespace, argparse.ArgumentParser]:
+    """Function to return the ArgumentParser & Namespace objects created from the args.
 
     Args:
         args:   A list of arguments from the commandline
-                e.g. ['wordc', '-c', ,'mobydick.txt']
+                e.g. ['wordc', 'mobydick.txt', '-c']
     """
     parser = argparse.ArgumentParser(
         prog="wordc", description="Utility to list the top word frequency in a document"

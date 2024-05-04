@@ -3,7 +3,7 @@
 
 
 __title__ = "wordc"
-__version__ = "0.1.2"
+__version__ = "1.0.0"
 __author__ = "Stephen R A King"
 __description__ = "Utility to analyze word frequency in a text file."
 __email__ = "sking.github@gmail.com"

@@ -7,7 +7,7 @@
 # -- Project information -----------------------------------------------------
 
 project = "wordc"
-version = "1.0.0"
+version = "1.0.1"
 copyright = "2024, Stephen R A King"
 author = "Stephen R A King"
 

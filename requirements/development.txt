@@ -66,6 +66,7 @@ certifi==2024.2.2
 cffi==1.16.0
     # via
     #   argon2-cffi-bindings
+    #   cryptography
     #   pynacl
 cfgv==3.4.0
     # via pre-commit
@@ -91,13 +92,7 @@ click-option-group==0.5.6
 colorama==0.4.6
     # via
     #   -r development.in
-    #   bandit
-    #   build
-    #   click
     #   commitizen
-    #   ipython
-    #   pytest
-    #   sphinx
     #   tox
 comm==0.2.2
     # via
@@ -116,6 +111,8 @@ coverage[toml]==7.5.0
     # via -r development.in
 cruft==2.15.0
     # via -r development.in
+cryptography==42.0.7
+    # via secretstorage
 debugpy==1.8.1
     # via ipykernel
 decli==0.6.1
@@ -235,7 +232,11 @@ jaraco-functools==4.0.1
     # via keyring
 jedi==0.19.1
     # via ipython
-jinja2==3.1.3
+jeepney==0.8.0
+    # via
+    #   keyring
+    #   secretstorage
+jinja2==3.1.4
     # via
     #   commitizen
     #   cookiecutter
@@ -405,6 +406,8 @@ pbr==6.0.0
     # via stevedore
 pep8-naming==0.13.3
     # via -r development.in
+pexpect==4.9.0
+    # via ipython
 pkginfo==1.10.0
     # via twine
 platformdirs==4.2.1
@@ -430,6 +433,10 @@ prompt-toolkit==3.0.36
     #   questionary
 psutil==5.9.8
     # via ipykernel
+ptyprocess==0.7.0
+    # via
+    #   pexpect
+    #   terminado
 pure-eval==0.2.2
     # via stack-data
 pycodestyle==2.11.1
@@ -502,15 +509,6 @@ python-semantic-release==9.5.0
     # via -r development.in
 python-slugify==8.0.4
     # via cookiecutter
-pywin32==306
-    # via jupyter-core
-pywin32-ctypes==0.2.2
-    # via keyring
-pywinpty==2.0.13
-    # via
-    #   jupyter-server
-    #   jupyter-server-terminals
-    #   terminado
 pyyaml==6.0.1
     # via
     #   -r development.in
@@ -579,6 +577,8 @@ rpds-py==0.18.0
     # via
     #   jsonschema
     #   referencing
+secretstorage==3.3.3
+    # via keyring
 send2trash==1.8.3
     # via jupyter-server
 shellingham==1.5.4

@@ -1,5 +1,8 @@
 # Core Library modules
+import functools
+import time
 from pathlib import Path
+from typing import Any, Callable
 
 # Third party modules
 import chardet
@@ -48,3 +51,16 @@ def is_binary(file_path: Path) -> bool:
             ):  # Non-printable ASCII characters
                 return True
     return False
+
+
+def timer(func: Callable) -> Callable:
+    @functools.wraps(func)
+    def wrapper(*args: Any, **kwargs: Any) -> Any:
+        t1 = time.perf_counter()
+        value = func(*args, **kwargs)
+        t2 = time.perf_counter()
+        elapsed_time = t2 - t1
+        print(f"Elapsed time: {elapsed_time:0.4f} seconds")
+        return value
+
+    return wrapper

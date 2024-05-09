@@ -9,44 +9,45 @@ from pathlib import Path
 import psutil
 
 # Local modules
+from . import utils
 from .cli import parse_args
 from .config import config
 from .exceptions import file_exception
-from .utils import detect_encoding, determine_chunking, is_binary
 
 
 @file_exception
-def read_file_contents(doc: str, encoding: str) -> str:
+def read_file_contents(doc: Path, encoding: str) -> str:
     """Read a file normally - used for relatively small files"""
     with open(doc, encoding=encoding) as file:
         return file.read()
 
 
 @file_exception
-def read_file_chunks(doc: str, encoding: str, chunk_size: int) -> Generator:
+def read_file_chunks(doc: Path, encoding: str, chunk_size: int) -> Generator:
     """Read a file chunked into a specific size - used for large files"""
     with open(doc, encoding=encoding) as file:
-        remainder = ""
+        remainder: str = ""
         while True:
             chunk = file.read(chunk_size)
             if not chunk:
                 break
-            chunk = remainder + chunk
-            while True:
-                space_index = chunk.find(" ")
-                if space_index == -1:
-                    break
-                yield chunk[: space_index + 1]
-                remainder = chunk[space_index + 1 :]
-                chunk = chunk[space_index + 1 :]
-            remainder = chunk
+            total_chunk = remainder + chunk
+            try:
+                space_index = total_chunk.rindex(" ")
+            except ValueError:
+                remainder += chunk
+                continue
+            yield total_chunk[: space_index + 1]
+            remainder = total_chunk[space_index + 1 :]
+        if remainder:
+            yield remainder
 
 
 def fail_early_tests(file_path: Path) -> None:
     if not file_path.exists() or not file_path.is_file():
         print(f"The file '{file_path.name}' does not appear to be a file")
         sys.exit(1)
-    if is_binary(file_path):
+    if utils.is_binary(file_path):
         print(f"The file '{file_path.name}' appears to be a binary file")
         sys.exit(1)
 
@@ -69,8 +70,8 @@ def main() -> None:
 
     fail_early_tests(file_path)
     available_memory = psutil.virtual_memory().available
-    auto_chunking = determine_chunking(file_path, available_memory)
-    config.encoding = detect_encoding(file_path)
+    auto_chunking = utils.determine_chunking(file_path, available_memory)
+    config.encoding = utils.detect_encoding(file_path)
 
     if config.chunk or auto_chunking:
         print(f"chunking...with chunk size {config.chunk_size} bytes")

@@ -12,13 +12,10 @@ bandit==1.7.8
     # via flake8-bandit
 black==24.4.2
     # via -r test.in
+chardet==5.2.0
+    # via -r production.txt
 click==8.1.7
     # via black
-colorama==0.4.6
-    # via
-    #   bandit
-    #   click
-    #   pytest
 coverage[toml]==7.5.0
     # via pytest-cov
 flake8==7.0.0
@@ -82,6 +79,8 @@ platformdirs==4.2.1
     # via black
 pluggy==1.5.0
     # via pytest
+psutil==5.9.8
+    # via -r production.txt
 pycodestyle==2.11.1
     # via flake8
 pydocstyle==6.3.0
@@ -146,5 +145,5 @@ types-urllib3==1.26.25.14
     # via -r test.in
 typing-extensions==4.11.0
     # via mypy
-urllib3==2.2.1
+urllib3==2.2.2
     # via types-requests
